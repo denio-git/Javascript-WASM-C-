@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>WASM_Test</title>
+</head>
+<body>
+  <h1 id="header_em">Docker × Emscripten Wasmテスト</h1>
+  <div id="text_box">
+        値を入力して下さい。<br>
+        <input type="text" size="10" id = "num_first">　＋　
+        <input type="text" size="10" id = "num_second"><br>
+        <input type="button" id = "add_wasm" value="go wasm !!">
+      </div>
+  <script src="test.js"></script>
+  <script>
+    const emHeader = document.querySelector('#header_em');
+    const first_num= document.querySelector('#num_first');
+    const second_num= document.querySelector('#num_second');
+    const btn_add = document.querySelector('#add_wasm');
+    Module.onRuntimeInitialized = function() {
+      btn_add.onclick =  () => {
+        const a = parseInt(first_num.value);
+        const b = parseInt(second_num.value);
+        const sum = Module._add(a, b);
+        emHeader.innerHTML = a + "+" + b + "=" + sum ;
+      }
+    }
+  </script>
+</body>
+</html>

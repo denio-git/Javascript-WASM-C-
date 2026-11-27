@@ -1,0 +1,8 @@
+services:
+  emscripten:
+    image: emscripten/emsdk:latest
+    container_name: emscripten_dev
+    volumes:
+      - .:/src
+    # コンテナを起動させ続けるための設定
+    command: tail -f /dev/null

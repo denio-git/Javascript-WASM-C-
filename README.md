@@ -22,15 +22,14 @@ JavaScriptとWebAssemblyの組み合わせで、C言語の学習を試みた内�
 ## 📁 ディレクトリ構成
 
 ```text
-.
+├── LICENSE          # MIT
+├── README.md
 ├── docker compose.yml         # docker のymlファイル
 ├── index.html          # プレビュー画面
 ├── test.c          # 二つの整数を引数から得て、足し算を行うC言語ソースコード
 ├── Makefile            # Emscripten ビルド設定
 ├── test.js             # Emscripten 生成グルーコード
-├── test.wasm           # コンパイル済み WebAssembly バイナリ
-├── LICENSE          # MIT
-└── README.md
+└── test.wasm           # コンパイル済み WebAssembly バイナリ
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for detai
